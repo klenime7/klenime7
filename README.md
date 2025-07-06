@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
@@ -11,20 +11,16 @@
     <body>
         <div class="container-lg px-3 my-5 markdown-body">
         <h1>
-           <a href="https://klenime7.github.io/html/"style="color:#1E90FF; text-decoration: none;">Klenime7</a>
+    
             
         </h1>
         </div>
             <p>More Coming Soon!</p>
             <div>Copyright &copy; 2025 Inc. ALL rights resvered.
             </div>
+            
         <nav>
             <u1>
                 <li><a href="#">Home</a>
                 <li><a href="#">Login</a>
                 <li><a href="#">About</a>
-            </u1>
-        </nav>
-        
-    </body>
-</html>

@@ -10,17 +10,13 @@
 </head>
     <body>
         <div class="container-lg px-3 my-5 markdown-body">
-        <h1>
-    
-            
-        </h1>
         </div>
-            <p>More Coming Soon!</p>
+            <h2>More Coming Soon!</h2>
             <div>Copyright &copy; 2025 Inc. ALL rights resvered.
             </div>
-            
-        <nav>
+            <nav>
             <u1>
                 <li><a href="#">Home</a>
                 <li><a href="#">Login</a>
                 <li><a href="#">About</a>
+                <li><a href="">Music</a>

@@ -11,11 +11,12 @@
         </div>
             <h2>More Coming Soon!</h2>
             <br>
-            <div>Copyright &copy; 2025 Inc. ALL rights resvered.
-            </div>
             <nav>
             <u1>
                 <li><a href="#">Login</a>
                 <li><a href="#">Music</a>
                 <li><a href="#">Picture</a>
                 <li><a href="#">Moon Toggle</a>
+            <u1>
+                <div>Copyright &copy; 2025 Inc. ALL rights resvered.
+               </div>

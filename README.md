@@ -10,7 +10,6 @@
         <div class="container-lg px-3 my-5 markdown-body">
         </div>
             <h2>More Coming Soon!</h2>
-            <br>
             <nav>
             <u1>
                 <li><a href="#">Login</a>

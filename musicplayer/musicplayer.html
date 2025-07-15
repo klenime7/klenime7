@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Music Player</title>
+   <link real="icon" href="favicon.ico" type="image/x-icon">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+   <link rel="stylesheet" href="styles.css">
+   <script src="script.js" defer></script>
+   <style>
+      body{
+         justify-content: center;
+         align-items: center;
+         display: flex;
+         min-height: 90vh;
+         font-family: Arial, Helvetica, sans-serif;
+         background: #eee;
+      }
+      .music_player{
+         padding:20px;
+         border-radius: 20px;
+         background:#fff;
+         box-shadow: 10px 30px 40px rgba(0,0,0,0.2);
+         border:1px solid #ddd;
+      }
+      .album_art{
+         width: 200px;
+         height: 200px;
+         background:url(cover.png)center no-repeat;
+         background-size:cover;
+         border-radius: 10px;
+         box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+         margin-bottom:20px;
+      }
+      .time_container{
+         display: flex;
+         margin-bottom:5px;
+      }
+      .time_container div{
+         width:50%;
+         font-size: 12px;
+      }
+      .currentTime{
+         text-align: left;
+      }
+      .durationTime{
+         text-align:right;
+      }
+      .seek_bar{
+         width:100%;
+         height: 4px;
+         border-radius: 10px;
+         background:#ddd;
+         position: relative;
+         overflow: hidden;
+      }
+      .seek_bar_inner{
+         background:#80808080;
+         width:0%;
+         height: 100%;
+         position:absolute;
+         top:0px;
+         left:0px;
+      }
+      .control{
+         text-align: center;
+         margin:30px 0px;
+         justify-content: center;
+         align-items: center;
+         display: flex;
+      }
+      .prev_btn{
+         width:50px;
+         height: 50px;
+         background-color:#fff;
+         background:url(previous.png)center no-repeat;
+         background-size: 50%;
+         border:1px solid #ddd;
+         border-radius: 50%;
+         box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+         margin:0px 0px;
+         cursor: pointer;
+      }.play_btn{
+         width:50px;
+         height: 50px;
+         background-color:#fff;
+         background:url(play.png)center no-repeat;
+         background-size: 50%;
+         border:1px solid #ddd;
+         border-radius: 50%;
+         box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+         cursor: pointer;
+      }.next_btn{
+         width:50px;
+         height: 50px;
+         background-color:#fff;
+         background:url(next.png)center no-repeat;
+         background-size: 50%;
+         border:1px solid #ddd;
+         border-radius: 50%;
+         box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+         margin:0px 0px;
+         cursor: pointer;
+      }
+
+   </style>
+</head>
+<body>
+   <h1></h1>
+   <div class="music_player">
+      <div class="album_art"></div>
+
+      <div class="time_container">
+         <div class="currentTime" id="currentTime">0:00</div>
+         <div class="durationTime" id="durationTime">0:00</div>
+      </div>
+      <div class="seek_bar">
+         <div class="seek_bar_inner"></div>
+      </div>
+      <h1></h1>
+      <div class="control">
+         <div class="prev_btn"></div>
+         <div class="play_btn" onclick="play_song()"></div>
+         <div class="next_btn"></div>
+      </div>
+    </div>
+
+
+   
+   <script>
+      var music_player = new Audio(),
+          currentTime = document.getElementById('currentTime'),
+          durationTime = document.getElementById('durationTime'),
+          seek_bar = document.querySelector('.seek_bar_inner'),
+          play_btn = document.querySelector('.play_btn');
+
+      music_player.src = "tuki.flac"; 
+
+
+      function getTimeFormat(time_var){
+         var sec_num = parseInt(time_var, 10);
+         var hours = Math.floor(sec_num / 3600);
+         var minutes = Math.floor((sec_num - (hours * 3600 )) / 60 );
+         var sec = sec_num - (hours * 3600) - (minutes * 60);
+
+         if(hours < 10){hours = "0"+hours}
+         if(minutes < 10){minutes = "0"+minutes}
+         if(sec < 10){sec = "0"+sec}
+
+         if(hours == 0){
+            return minutes+":"+sec;
+         }else{
+            return hours+":"+minutes+":"+sec;
+         }
+      }
+
+
+      music_player.addEventListener('timeupdate', function(){
+         var player_currentTime = getTimeFormat(music_player.currentTime);
+         var player_duration = getTimeFormat(music_player.duration);
+         var seek_width = music_player.currentTime * 100 / music_player.duration;
+
+         currentTime.innerHTML = player_currentTime;
+         durationTime.innerHTML = player_duration;
+         seek_bar.style.width = seek_width+"%";
+      });
+
+      function play_song(){
+         if(music_player.paused){
+            play_btn.style.background = "url(pause.png)center no-repeat";
+            play_btn.style.backgroundSize = "50%";
+            music_player.play();
+         }else{
+            play_btn.style.background = "url(play.png)center no-repeat";
+            play_btn.style.backgroundSize = "50%";
+            music_player.pause();
+         }
+      }
+   </script>
+</body>
+</html>

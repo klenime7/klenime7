@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Music Player</title>
+   <link real="icon" href="favicon.ico" type="image/x-icon">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+   <link rel="stylesheet" href="mp.css">
+   
+</head>
+<body>
+   <div class="background">
+      <img src="tukicover.png" id="bg-img">
+   </div>
+   <div class="music_player">
+      <div class="album_art">
+         <img src="tukicover.png" id="cover">
+      </div>
+
+      <h2 id="music-title"></h2>
+      <h3 id="music-artist"></h3>
+
+   <div class="player-progress" id="player-progress">
+            <div class="progress" id="progress"></div>
+   </div>
+      <div class="music-duration">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+   
+      <div class="control">
+         <div class="prev_btn" title="Previous" id="prev"></div>
+         <div class="play_btn" title="Play" id="play"></div>
+         <div class="next_btn" title="Next" id="next"></div>
+      </div>
+   </div>
+    <script src="mp.js"></script>
+</body>
+</html>

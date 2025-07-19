@@ -14,7 +14,7 @@
             <nav>
             <u1>
                 <li><a href="#">Login</a>
-                <li><a href="https://klenime7.github.io/klenime7/musicplayer0.02/musicplayer.HTML">Music</a>
+                <li><a href="https://klenime7.github.io/klenime7/musicplayer/mp.html">Music</a>
                 <li><a href="#">Picture</a>
                 <li><a href="#">Moon Toggle</a>
             <u1>

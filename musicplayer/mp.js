@@ -18,6 +18,11 @@ const songs = [
         displayName: 'bansanka',
         cover: 'tukicover.png',
         artist: 'tuki.',
+    },
+    {   path:' カタオモイ.mp3',
+        displayName:' カタオモイ',
+        cover:' カタオモイ.jpg',
+        artist:'Aimer',
     }
 ];
 
